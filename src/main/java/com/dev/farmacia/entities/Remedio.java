@@ -46,8 +46,11 @@ public class Remedio {
     @Enumerated(EnumType.STRING)
     private Laboratorio laboratorio;
 
+    private Boolean ativo;
+
     //Mappear remedioDto
     public Remedio(RemedioDto remedioDto){
+        this.ativo = true;
         this.nome = remedioDto.nome();
         this.via = remedioDto.via();
         this.lote = remedioDto.lote();
@@ -68,5 +71,13 @@ public class Remedio {
         if(atualizarRemedioDto.laboratorio() != null){
             this.laboratorio = atualizarRemedioDto.laboratorio();
         }
+    }
+
+    public void inativar() {
+        this.ativo = false;
+    }
+
+    public void setAtivar() {
+        this.ativo = true;
     }
 }
