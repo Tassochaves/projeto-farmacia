@@ -2,6 +2,7 @@ package com.dev.farmacia.entities;
 
 import java.time.LocalDate;
 
+import com.dev.farmacia.dtos.AtualizarRemedioDto;
 import com.dev.farmacia.dtos.RemedioDto;
 import com.dev.farmacia.enums.Laboratorio;
 import com.dev.farmacia.enums.Via;
@@ -13,6 +14,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -52,5 +54,19 @@ public class Remedio {
         this.quantidade = remedioDto.quantidade();
         this.validade = remedioDto.validade();
         this.laboratorio = remedioDto.laboratorio();
+    }
+
+    public void atualizarInformacoes(@Valid AtualizarRemedioDto atualizarRemedioDto) {
+        if(atualizarRemedioDto.nome() != null){
+            this.nome = atualizarRemedioDto.nome();
+        }
+
+        if(atualizarRemedioDto.via() != null){
+            this.via = atualizarRemedioDto.via();
+        }
+
+        if(atualizarRemedioDto.laboratorio() != null){
+            this.laboratorio = atualizarRemedioDto.laboratorio();
+        }
     }
 }
