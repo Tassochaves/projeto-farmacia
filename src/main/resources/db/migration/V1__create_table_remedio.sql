@@ -1,11 +1,11 @@
 CREATE TABLE tb_remedio(
-    id bigint not null auto_increment,
-    nome varchar(100) not null,
-    via varchar(100) not null,
-    lote varchar(100) not null,
-    quantidade varchar(100) not null,
-    validade varchar(100) not null,
-    laboratorio varchar(100) not null,
+    id BIGINT NOT NULL auto_increment,
+    nome VARCHAR(100) NOT NULL,
+    via VARCHAR(100) NOT NULL,
+    lote VARCHAR(100) NOT NULL,
+    quantidade INT(20) NOT NULL,
+    validade VARCHAR(100) NOT NULL,
+    laboratorio VARCHAR(100) NOT NULL,
 
     PRIMARY KEY (id)
 );

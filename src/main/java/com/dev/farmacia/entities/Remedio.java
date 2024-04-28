@@ -1,5 +1,7 @@
 package com.dev.farmacia.entities;
 
+import java.time.LocalDate;
+
 import com.dev.farmacia.dtos.RemedioDto;
 import com.dev.farmacia.enums.Laboratorio;
 import com.dev.farmacia.enums.Via;
@@ -29,14 +31,15 @@ public class Remedio {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String nome;
 
     @Enumerated(EnumType.STRING)
     private Via via;
 
     private String lote;
-    private String quantidade;
-    private String validade;
+    private int quantidade;
+    private LocalDate validade;
 
     @Enumerated(EnumType.STRING)
     private Laboratorio laboratorio;
