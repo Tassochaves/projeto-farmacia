@@ -22,7 +22,7 @@ public record RemedioDto(
     
     int quantidade,
 
-    @Future
+    @Future()
     LocalDate validade,
 
     @Enumerated
