@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.dev.farmacia.dtos.TokenJWTDto;
 import com.dev.farmacia.dtos.UsuarioAutenticacaoDto;
 import com.dev.farmacia.entities.Usuario;
-import com.dev.farmacia.services.AutenticacaoService;
 import com.dev.farmacia.services.TokenService;
 
 import jakarta.validation.Valid;
